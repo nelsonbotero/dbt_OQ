@@ -1,4 +1,8 @@
-select source_country, material_group, count(*) as NB_Products
+select 
+source_country
+, COMPONENT
+,PRODUCT_CATEGORY
+, count(*) as NB_Products
 from {{ ref("SLV_Material_Modelled_Proccess_Step") }}
-group by source_country, material_group
+group by source_country, COMPONENT,PRODUCT_CATEGORY
 
