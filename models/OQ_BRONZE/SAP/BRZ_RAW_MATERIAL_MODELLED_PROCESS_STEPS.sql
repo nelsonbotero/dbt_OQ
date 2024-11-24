@@ -26,4 +26,4 @@ select
     TIER	,
     PROCESS_STEP	
 
-from {{ source('ERP', 'SMALL_ROW_MATERIAL_MOD_PROC_STEP') }}
+from {{ source('SAP', 'SMALL_ROW_MATERIAL_MOD_PROC_STEP') }}

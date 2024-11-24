@@ -1,15 +1,15 @@
 version: 2
 
 sources:
-    - name: ERP
-      description: Files coming from office 365
+    - name: SAP
+      description: Files coming from SAP
       database: OQ_BRONZE
-      schema: ERP
+      schema: SAP
       tables:
         - name: SMALL_ROW_MATERIAL_MOD_PROC_STEP
           description: material row froom all the countries processed
     - name: OFF365
-      description: Files coming from ERP
+      description: Files coming from office 365 
       database: OQ_BRONZE
       schema: OFF365
       tables:
