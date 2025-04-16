@@ -17,3 +17,10 @@ models:
         tests:
           - unique
           - not_null
+  - name: GLD_Material_Modelled_Proccess_Step
+    description: Agregated data from modeled process
+    columns:
+      - name: component
+        description: Name of the component
+      - name: nb_products
+        description: Number of products by component

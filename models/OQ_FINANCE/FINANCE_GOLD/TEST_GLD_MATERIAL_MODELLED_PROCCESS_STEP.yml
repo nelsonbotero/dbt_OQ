@@ -1,0 +1,19 @@
+unit_tests:
+  - name: Test_test
+    model: GLD_Material_Modelled_Proccess_Step
+    given:
+      - input: ref("SLV_Material_Modelled_Proccess_Step")
+        format: csv
+        rows: | 
+          NB_LINE,PRODUCT_CATEGORY,COMPONENT,MATERIAL_GROUP,RAW_MATERIAL,SUPPLIER_CODE,MATERIAL_CODE,SOURCE_COUNTRY,TRACEABILITY,ALIGNMENT_KERING_ST,PURCHASE_COUNTRY,RAW_HIDE_WET_BLUE_STAGE,WET_HIDE_WET_BLUE_STAGE,A_2023_INPUT_QUALITY,A_2023_INPUT_UNIT,CONVERSION_FACTOR,A_2023_QUANTITY_CONS_UNIT,CONSOLIDATION_UNIT,SUPPLIER,CERTIFICATION,ADDITIONAL_QUESTION,ANSWER,TRADEMARK,MODELLED_MATERIAL,TIER,PROCESS_STEP,LCA_1K_MOD_MAT,ENVIRONEMENT_INDICATOR
+          51335,RTW,Knitwear,Animal_Fibers,Animal Fibers - cashmere - conventional,,XKDO8,CHINA,Traceable,Not Aligned,,,,118.026,kg - yarn,1.0,118.026,kg,,,,,,Animal Fibers - cashmere - conventional,4.0,Animal rearing,5.020001791056156e-10,Arsenic
+          51353,RTW,Knitwear,Animal_Fibers,Animal Fibers - cashmere - conventional,,ZANMY,CHINA,Traceable,Not Aligned,,,,186.0405,kg - yarn,1.0,186.0405,kg,,,,,,Animal Fibers - cashmere - conventional,4.0,Animal rearing,5.020001791056156e-10,Arsenic
+          51719,RTW,Main material,Animal_Fibers,Animal Fibers - cashmere - conventional,,ZAOVV,FRANCE,Traceable,Not Aligned,,,,23.1,kg - fabric,1.0,23.1,kg,,,,,,Animal Fibers - cashmere - conventional,4.0,Animal rearing,5.020001791056156e-10,Arsenic
+    expect: 
+      format: csv
+      rows: |
+        source_country,COMPONENT,PRODUCT_CATEGORY,NB_Products
+        CHINA,Knitwear,RTW,2
+        FRANCE,Main material,RTW,1
+
+      
